@@ -374,7 +374,7 @@ label_txt | label text for profile default avatar
 Attribute | Description 
 --------- | ----------- 
 is_expired | is the policy expired
-id | ID number of the policy
+id (*integer*)| ID number of the policy
 name | name of the policy
 
 #### activities object
