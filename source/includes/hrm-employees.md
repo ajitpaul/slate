@@ -24,7 +24,9 @@ emp_status| 'AV'  | Active/Employed
           | 'TR'  | Terminated
  -->
 
-### Employee Profile
+### Employee Object
+
+
 ```http
 GET /api/hrm/people/{id} HTTP/1.1
 Accept: application/json
@@ -88,13 +90,13 @@ company (*String*)| Organisation Name
 full_name (*String*)| Employee full name 
 image (*String*)| url of the profile image 
 job_title (*String*)| Job Title/Designation 
-[organisation](#organisation_object) (*object*)| Company Data 
+[organisation](#organisation-object) (*object*)| Company Data 
 about (*String*)| Short description of the employee 
 employee_id (*integer*)| Employee ID Number 
 emp_status (*String*)| employee status (Active,Resigned,..) 
 emp_type (*String*)| Employee Type (Fulltime,Parttime,..)
 
-#### organisation_object 
+#### organisation object 
 Attribute | Description 
 --------- | ----------- 
 id (*integer*)| ID for the organisation
@@ -108,6 +110,153 @@ default_currency (*string*)| currency used by the organisation
 default_currency_symbol (*string*)| Symbol used for currency
 label_txt (*string*)| label text for profile default avatar
 orgkey (*string*)| organisation key
+
+
+### Create Employee
+Creates an employee object
+
+```http
+GET /api/users HTTP/1.1
+Accept: application/json
+Authorization: Token "YOUR ACCESS TOKEN"
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+```json
+{
+        "id": 303,
+        "first_name": "Ajith paul",
+        "last_name": "paul",
+        "email": "ajith4r4@blackmonk.com",
+        "job_title": "asdasd",
+        "last_login": null,
+        "organization": 1,
+        "is_admin": false,
+        "company": "Dsqqqqqqq",
+        "image": null,
+        "first_letter": "A",
+        "full_name": "Ajith paul paul",
+        "google_token": {
+            "g_refresh_token": null,
+            "g_acces_token": null
+        },
+        "is_hrm_admin": false,
+        "project_access": [],
+        "is_owner": false,
+        "label_txt": "Ap",
+        "is_active": true,
+        "time_zone": "Asia/Kolkata"
+    }
+```
+
+<aside>POST   /api/users</aside>
+
+Attribute | Description 
+--------- | ----------- 
+first_name | first name of the new employee
+last_name | last name of the new employee
+is_admin | the new employee to have admin privileges
+email | email address of the employee
+job_title | designation of the employee
+time_zone | Time Zone of the employee
+
+### Update Employee
+
+
+Attribute | Description 
+--------- | ----------- 
+id | ID for the employee
+emp_id (*integer*)|  employee ID card number 
+emp_status (*String*)| employee status (Active,Resigned,..) 
+emp_type (*String*)| Employee Type (Fulltime,Parttime,..)
+policy (*boolean*) | is policy is activated for the specific employee
+start_date (*string*) | joining date of the employee
+last_date (*string*) | date on which employee left the company
+accuracy | the value for displaying profile completion
+job_description | short description of employee's job.
+[user](#user-object) (*object*) | user data
+
+#### user object
+Attribute | Description 
+--------- | ----------- 
+id (*integer*) | Employee Profile ID 
+about (*string*) | short description about the employee (comes under Bio)
+email (*string*) | email address of the employee
+account_status | current status of the account (Active, Suspended, Terminated ..)
+first_name (*string*) | Employee first name 
+last_name (*string*) | Employee Last name 
+is_admin (*boolean*)| Employee is Administrator or not
+is_hrm_admin (*boolean*)| Employee is HRM Administrator or not
+is_active (*boolean*)| Employee is Active or not 
+is_crm_admin (*boolean*) | Employee is CRM admin or not
+is_owner (*boolean*) | user is owner of the company 
+label_txt (*string*) | Label text for profile avatar 
+job_title (*String*)| Job Title/Designation 
+[owner](#user-object) (*object*) | owner info
+
+#### Returns
+
+This will return the 
+
+
+
+### Update Employee
+Attribute | Description 
+--------- | ----------- 
+
+
+
+
+about
+  "<div><!--block-->Test 123</div>"
+  
+account_status
+  "AV"
+  
+email
+  "prasad@doublespring.com"
+  
+first_name
+  "Prasad"
+  
+full_name
+  "Prasad Vara"
+  
+id
+  221
+  
+is_active
+  true
+  
+is_admin
+  true
+  
+is_crm_admin
+  true
+  
+is_hrm_admin
+  true
+  
+is_owner
+  false
+  
+job_title
+  "Program Manager"
+  
+label_txt
+  "PV"
+  
+last_name
+  "Vara"
+
+
+
+
+
+
+
+
 
 ### Time-off
 ```http
@@ -169,7 +318,7 @@ Attribute | Description
 used_timeoff (*integer*) | Number of used timeoff days
 available_timeoff (*integer*) | Number of available timeoff days
 policy_status (*boolean*)| Policy active or not
-[policy_details](#policy_details_object) (*object*) | Details about the policy
+[policy_details](#policy_details-object) (*object*) | Details about the policy
 policy_emp_timeoff (*integer*) | total number of timeoff days
 policy (*boolean*) | is policy is activated for the specific employee
 pending_timeoff (*integer*)| Number of timeoff days left
@@ -177,11 +326,11 @@ approved_timeoff (*integer*)| Number of timeoff days approved
 id | ID of the Timeoff policy
 
 
-#### policy_details_object
+#### policy_details object
 
 Attribute | Description 
 --------- | ----------- 
-[working_hours](#working_hours_object) (*object*)| details about the working hours
+[working_hours](#working_hours-object) (*object*)| details about the working hours
 total_timeoff (*integer*)| total number of timeoff days
 name (*string*) | name of the policy
 policy_renew_type (*string*)| Policy renewal type- first of every year or half year
@@ -190,7 +339,7 @@ carry_over (*boolean*)| is timeoff balance can be carried over to next year
 id (*integer*) | ID of the timeoff policy
 timeoff_interval (*integer*) | 
 
-#### working_hours_object
+#### working_hours object
 
 Attribute | Description 
 --------- | ----------- 
@@ -393,6 +542,8 @@ is_deleted | whether the activity is deleted
 [action_obj](#action_obj) | object to understand context of activity
 [source_obj](#source_obj)_ | activity data (comment details)
 [target_obj](#target_obj) | Target object
+
+
 
 #### action_obj
 Attribute | Description 

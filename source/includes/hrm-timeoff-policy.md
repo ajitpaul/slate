@@ -1,4 +1,2 @@
 # HRMS
 
-
-## Time-off Policy
