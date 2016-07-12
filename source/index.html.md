@@ -12,8 +12,11 @@ toc_footers:
 
 includes:
   - introduction
+  - hrm
   - hrm-timeoff-policy
+  - hrm-timeoff
   - hrm-employees
+  - hrm-tasks
   - errors
 
 
