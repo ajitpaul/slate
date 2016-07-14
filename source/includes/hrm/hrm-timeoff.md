@@ -123,53 +123,53 @@ API endpoint for the list of all time-off requests made by the employee.
 
 Attribute | Description 
 --------- | ----------- 
-id | request ID number
+id (*integer*)| request ID number
 start_date (*string*) | timeoff starting date
 end_date (*string*) | timeoff ending date
-time_off_policy | policy ID number
+time_off_policy (*integer*)| policy ID number
 status (*string*)| status of the timeoff(approved) 
 modified_on (*string*)| datetime on which modified
 act_on (*string*) | datetime of Action to timeoff(approve or reject)
 comment (*string*)| comment on the timeoff
 [modified_by] (#user-object)| details of the person who modified the timeoff request
-days_of_leave | number of days of leave applied
+days_of_leave (*integer*)| number of days of leave applied
 [activities](#activities-object) | array of all activities of the request
-can_approve | possible to approve or not
+can_approve (*boolean*)| possible to approve or not
 [created_by] (#user-object) | Details about the creator of the request
 created_on (*string*) | datetime of the creation
-policy_detail | Info on the policy (id,name ..)
+[policy_detail](#policy_detail) | Info on the policy (id,name ..)
 [entered_by](#user-object) (object) | details about the user who entered the timeoff
-is_entered | is the timeoff entered (timeoff entered by admin or owner)
+is_entered (*boolean*)| is the timeoff entered (timeoff entered by admin or owner)
 
 #### user object
 Attribute | Description 
 --------- | ----------- 
-url | url of the profile
-image | url of the profile image
-id | ID of the employee
-full_name | full name of the user
-email | email address of the user
-label_txt | label text for profile default avatar
+url (*string*)| url of the profile
+image (*string*)| url of the profile image
+id (*integer*)| ID of the employee
+full_name (*string*)| full name of the user
+email (*string*)| email address of the user
+label_txt (*string*)| label text for profile default avatar
 
 #### policy_detail
 Attribute | Description 
 --------- | ----------- 
-is_expired | is the policy expired
+is_expired (*boolean*)| is the policy expired
 id (*integer*)| ID number of the policy
-name | name of the policy
+name (*string*)| name of the policy
 
 #### activities object
 Attribute | Description 
 --------- | ----------- 
-id | ID of the activity
-act_on | datetime of the activity
-action_type | type of activity
-action_field | field type of the activity
-verb | verb text for displaying of the activity
-class_name | class name for the acitivity
+id (*integer*)| ID of the activity
+act_on (*string*)| datetime of the activity
+action_type (*string*)| type of activity
+action_field (*string*)| field type of the activity
+verb (*string*)| verb text for displaying of the activity
+class_name (*string*)| class name for the acitivity
 organization_id | Organization ID number
-created_on | datetime of the creation of the activity
-is_deleted | whether the activity is deleted
+created_on (*string*)| datetime of the creation of the activity
+is_deleted (*boolean*)| whether the activity is deleted
 [actor](#user-object) | user who added the activity(comment,..)
 [action_obj](#action_obj) | object to understand context of activity
 [source_obj](#source_obj)_ | activity data (comment details)
@@ -178,15 +178,15 @@ is_deleted | whether the activity is deleted
 #### action_obj
 Attribute | Description 
 --------- | ----------- 
-id | ID of the activity
-ctype | type of the activity applying to
+id (*integer*)| ID of the activity
+ctype (*string*)| type of the activity applying to
 
 #### source _obj
 Atribute | Description
 -------- | -----------
-comment_detail | comment text
-id | comment ID number
-ctype | type of comment
+comment_detail (*string*)| comment text
+id (*integer*)| comment ID number
+ctype (*string*)| type of comment
 
 #### target_obj
 Atribute | Description
@@ -415,8 +415,8 @@ If the call succeeds, it will return an [time off request](#time-off-requests)  
 
 Attribute | Description
 -----------| -----------
-statusLabel | if the request is approved it will show "approved" 
-editMode | if the request has been edited, it will be true.
+statusLabel (*string*)| if the request is approved it will show "approved" 
+editMode (*boolean*)| if the request has been edited, it will be true.
 
 
 ### Cancel Time Off Request

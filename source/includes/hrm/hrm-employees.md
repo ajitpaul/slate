@@ -187,12 +187,12 @@ Sample Response
 
 Attribute | Description 
 --------- | ----------- 
-first_name | first name of the new employee
-last_name | last name of the new employee
-is_admin | the new employee to have admin privileges
-email | email address of the employee
-job_title | designation of the employee
-time_zone | Time Zone of the employee
+first_name (*string*)| first name of the new employee
+last_name (*string*)| last name of the new employee
+is_admin (*boolean*)| the new employee to have admin privileges
+email (*string*)| email address of the employee
+job_title (*string*)| designation of the employee
+time_zone (*string*)| Time Zone of the employee
 
 #### Returns
 
@@ -300,15 +300,15 @@ Sample Response
 
 Attribute | Description 
 --------- | ----------- 
-id | ID for the employee
+id (*integer*)| ID for the employee
 emp_id (*integer*)|  employee ID card number 
 emp_status (*String*)| employee status (Active,Resigned,..) 
 emp_type (*String*)| Employee Type (Fulltime,Parttime,..)
 policy (*boolean*) | is policy is activated for the specific employee
 start_date (*string*) | joining date of the employee
 last_date (*string*) | date on which employee left the company
-accuracy | the value for displaying profile completion
-job_description | short description of employee's job.
+accuracy (*integer*)| the value for displaying profile completion
+job_description (*string*)| short description of employee's job.
 [user](#user-object) (*object*) | user data
 
 #### user object
@@ -317,7 +317,7 @@ Attribute | Description
 id (*integer*) | Employee Profile ID 
 about (*string*) | short description about the employee (comes under Bio)
 email (*string*) | email address of the employee
-account_status | current status of the account (Active, Suspended, Terminated ..)
+account_status (*string*)| current status of the account (Active, Suspended, Terminated ..)
 first_name (*string*) | Employee first name 
 last_name (*string*) | Employee Last name 
 is_admin (*boolean*)| Employee is Administrator or not

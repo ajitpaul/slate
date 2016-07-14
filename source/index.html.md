@@ -12,11 +12,14 @@ toc_footers:
 
 includes:
   - introduction
-  - hrm
-  - hrm-timeoff-policy
-  - hrm-timeoff
-  - hrm-employees
-  - hrm-tasks
+  - crm/crm
+  - crm/crm-deals
+  - hrm/hrm
+  - hrm/hrm-timeoff-policy
+  - hrm/hrm-timeoff
+  - hrm/hrm-employees
+  - hrm/hrm-tasks
+  - hrm/hrm-checkins
   - errors
 
 
