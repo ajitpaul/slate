@@ -1,4 +1,6 @@
-## CRM Deal Object
+## Deal
+
+### Deal Object
 
 ```json
 {
@@ -170,8 +172,22 @@ options (*string*)| options for the checkbox
 is_add_field (*boolean*)| if the field should appear in the add deal form
 
 
-### Create Deal
+### Create Deal Object
 
+```
+Sample Request
+```
+
+```http
+POST api/crm/deals HTTP/1.1
+Accept: application/json
+Authorization: Token "YOUR ACCESS TOKEN"
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
+```json
 {
    "stage":{
       "id":529,
@@ -237,3 +253,281 @@ is_add_field (*boolean*)| if the field should appear in the add deal form
    "deal_value":"25000",
    "expected_close":"2016-07-29"
 }
+```
+
+```
+Sample Response
+```
+
+```json
+{
+   "id":3379,
+   "owner":{
+      "url":"/users/1",
+      "image":"https://twprofile.s3.amazonaws.com/users/user-8011f79c-007c-4943-a968-1d13dd13b1d9-image
+.jpg",
+      "id":1,
+      "full_name":"Sathish Venkat",
+      "email":"sathish@doublespring.com",
+      "label_txt":"SV"
+   },
+   "title":"test deal",
+   "index":0,
+   "stage":{
+      "index":0,
+      "total_stage":5,
+      "title":"Prospect Lead",
+      "rotting_days":null,
+      "is_deal_rotting":false,
+      "id":529
+   },
+   "deal_value":"25000.00",
+   "currency":{
+      "is_custom":false,
+      "symbol":"₹",
+      "code":"INR",
+      "id":194
+   },
+   "company":null,
+   "expected_close":"2016-07-20",
+   "last_activity_on":"2016-07-14",
+   "next_activity_on":null,
+   "status":"open",
+   "is_trashed":false,
+   "people":[
+
+   ],
+   "pipeline":39,
+   "tags":null,
+   "custom_fields":{
+      "77":{
+         "field_type":"checkbox",
+         "name":"wedwd",
+         "value":{
+            "wedwd":false
+         },
+         "key":"wedwd",
+         "options":[
+            "wedwd"
+         ],
+         "is_add_field":true
+      },
+      "74":{
+         "field_type":"select",
+         "name":"ed",
+         "value":"ewded",
+         "key":"ed",
+         "options":[
+            "ewded"
+         ],
+         "is_add_field":true
+      }
+   },
+   "won_on":null,
+   "lost_on":null
+}
+```
+
+<aside>POST api/crm/deals</aside>
+
+
+### Update Deal
+
+```
+Sample Request
+```
+
+```http
+POST api/crm/deals HTTP/1.1
+Accept: application/json
+Authorization: Token "YOUR ACCESS TOKEN"
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
+```json
+{
+   "id":3379,
+   "created_by":{
+      "url":"/users/1",
+      "image":"https://twprofile.s3.amazonaws.com/users/user-8011f79c-007c-4943-a968-1d13dd13b1d9-image
+.jpg",
+      "id":1,
+      "full_name":"Sathish Venkat",
+      "email":"sathish@doublespring.com",
+      "label_txt":"SV"
+   },
+   "owner":{
+      "id":1,
+      "image":"https://twprofile.s3.amazonaws.com/users/user-8011f79c-007c-4943-a968-1d13dd13b1d9-image
+.jpg",
+      "full_name":"Sathish Venkat",
+      "label_txt":"SV"
+   },
+   "title":"test deal",
+   "index":0,
+   "stage":{
+      "id":529,
+      "title":"Prospect Lead",
+      "is_trashed":false,
+      "index":0,
+      "is_deal_rotting":false,
+      "rotting_days":null,
+      "no_of_deals":140
+   },
+   "deal_value":"225000.00",
+   "currency":194,
+   "expected_close":"2016-07-20",
+   "last_activity_on":"2016-07-14",
+   "next_activity_on":null,
+   "is_trashed":false,
+   "status":"open",
+   "people":[
+
+   ],
+   "company":null,
+   "created_on":"2016-07-14T10
+:14:53.831473Z",
+   "tags":null,
+   "custom_fields":{
+      "73":{
+         "field_type":"text",
+         "name":"sdsd",
+         "key":"sdsd",
+         "options":null
+      },
+      "74":{
+         "field_type":"select",
+         "name":"ed",
+         "value":"ewded",
+         "key":"ed",
+         "options":[
+            "ewded"
+         ],
+         "is_add_field":true
+      },
+      "75":{
+         "field_type":"textarea",
+         "name":"wedwed",
+         "key":"wedwed",
+         "options":null
+      },
+      "76":{
+         "field_type":"radio",
+         "name":"sdwd",
+         "key":"sdwd",
+         "options":[
+            "dwdw"
+         ]
+      },
+      "77":{
+         "field_type":"checkbox",
+         "name":"wedwd",
+         "value":{
+            "wedwd":false
+         },
+         "key":"wedwd",
+         "options":[
+            "wedwd"
+         ],
+         "is_add_field":true
+      },
+      "78":{
+         "field_type":"date",
+         "name":"wedwdwqdw",
+         "key":"wedwdwqdw",
+         "options":null
+      }
+   },
+   "won_on":null,
+   "lost_on":null,
+   "closed_on":null,
+   "pipeline":39
+}
+```
+
+```
+Sample Response
+```
+
+```json
+{
+   "id":3379,
+   "created_by":{
+      "url":"/users/1",
+      "image":"https://twprofile.s3.amazonaws.com/users/user-8011f79c-007c-4943-a968-1d13dd13b1d9-image
+.jpg",
+      "id":1,
+      "full_name":"Sathish Venkat",
+      "email":"sathish@doublespring.com",
+      "label_txt":"SV"
+   },
+   "owner":{
+      "url":"/users/1",
+      "image":"https://twprofile.s3.amazonaws.com/users/user-8011f79c-007c-4943-a968-1d13dd13b1d9-image
+.jpg",
+      "id":1,
+      "full_name":"Sathish Venkat",
+      "email":"sathish@doublespring.com",
+      "label_txt":"SV"
+   },
+   "title":"test deal",
+   "index":0,
+   "stage":{
+      "index":0,
+      "total_stage":5,
+      "title":"Prospect Lead",
+      "rotting_days":null,
+      "is_deal_rotting":false,
+      "id":529
+   },
+   "deal_value":"225000.00",
+   "currency":{
+      "is_custom":false,
+      "symbol":"
+₹",
+      "code":"INR",
+      "id":194
+   },
+   "expected_close":"2016-07-20",
+   "last_activity_on":"2016-07-14",
+   "next_activity_on":null,
+   "is_trashed":false,
+   "status":"open",
+   "people":[
+
+   ],
+   "company":null,
+   "created_on":"2016-07-14T10:14:53
+.831473Z",
+   "tags":null,
+   "custom_fields":{
+      "77":{
+         "field_type":"checkbox",
+         "name":"wedwd",
+         "value":{
+            "wedwd":false
+         },
+         "key":"wedwd",
+         "options":[
+            "wedwd"
+         ],
+         "is_add_field":true
+      },
+      "74":{
+         "field_type":"select",
+         "name":"ed",
+         "value":"ewded",
+         "key":"ed",
+         "options":[
+            "ewded"
+         ],
+         "is_add_field":true
+      }
+   },
+   "won_on":null,
+   "lost_on":null,
+   "closed_on":null
+}
+```
