@@ -88,3 +88,20 @@ profile_image | image url of the contact
 company | company ID
 company | company name
 tags | tags related to the contact
+
+
+### Connect Deal To Mail
+
+```
+Sample Request
+```
+```json
+ {
+  "deal":3375
+ }
+```
+
+#### Returns
+ 
+ If the call succeeds, it will return the [mail object](#mail-object) with updated deal name.
+

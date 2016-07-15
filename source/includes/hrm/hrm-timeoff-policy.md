@@ -177,7 +177,7 @@ timeoff_interval | number of days after which new hire can apply for leave
 
 #### Returns 
 
-If the call succeeds, the timeoff policy object is returned with all the information about the timeoff policy.
+If the call succeeds, the [timeoff policy](#time-off-policy-object) object is returned with all the information about the timeoff policy.
 
 ### Delete Time Off Policy
 
