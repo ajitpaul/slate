@@ -137,11 +137,11 @@ days_of_leave (*integer*)| number of days of leave applied
 can_approve (*boolean*)| possible to approve or not
 [created_by] (#user-object) | Details about the creator of the request
 created_on (*string*) | datetime of the creation
-[policy_detail](#policy_detail) | Info on the policy (id,name ..)
+[policy_detail](#policy-detail) | Info on the policy (id,name ..)
 [entered_by](#user-object) (object) | details about the user who entered the timeoff
 is_entered (*boolean*)| is the timeoff entered (timeoff entered by admin or owner)
 
-#### user object
+#### User Object
 Attribute | Description 
 --------- | ----------- 
 url (*string*)| url of the profile
@@ -151,14 +151,14 @@ full_name (*string*)| full name of the user
 email (*string*)| email address of the user
 label_txt (*string*)| label text for profile default avatar
 
-#### policy_detail
+#### Policy Detail Object
 Attribute | Description 
 --------- | ----------- 
 is_expired (*boolean*)| is the policy expired
 id (*integer*)| ID number of the policy
 name (*string*)| name of the policy
 
-#### activities object
+#### Activities Object
 Attribute | Description 
 --------- | ----------- 
 id (*integer*)| ID of the activity
@@ -171,26 +171,23 @@ organization_id | Organization ID number
 created_on (*string*)| datetime of the creation of the activity
 is_deleted (*boolean*)| whether the activity is deleted
 [actor](#user-object) | user who added the activity(comment,..)
-[action_obj](#action_obj) | object to understand context of activity
-[source_obj](#source_obj)_ | activity data (comment details)
-[target_obj](#target_obj) | Target object
+[action_obj](#action-obj) | object to understand context of activity
+[source_obj](#source-obj)_ | activity data (comment details)
 
-#### action_obj
+#### Action Object
 Attribute | Description 
 --------- | ----------- 
 id (*integer*)| ID of the activity
 ctype (*string*)| type of the activity applying to
 
-#### source _obj
+#### Source Object
 Atribute | Description
 -------- | -----------
 comment_detail (*string*)| comment text
 id (*integer*)| comment ID number
 ctype (*string*)| type of comment
 
-#### target_obj
-Atribute | Description
--------- | -----------
+
 
 #### Returns
 

@@ -72,7 +72,7 @@ created_on (*string*)| date of creation of checkin
 schedule_on (*string*)| date of next schedule the checkin
 is_responded (*boolean*)| if user has responded to the scheduled checkin
 
-#### assigned_to Object 
+#### Assigned To Object 
 
 Attribute | Description 
 --------- | -----------
@@ -152,8 +152,7 @@ Sample Response
          "job_title":"Developer",
          "user":{
             "url":"/users/274",
-            "image":"https://twprofile.s3.amazonaws.com/users/user-ad08f561-54a1-4623-975e-c996ddca7416-image
-.jpg",
+            "image":"https://twprofile.s3.amazonaws.com/image.jpg",
             "id":274,
             "full_name":"Ajith Paul",
             "email":"ajith.paul@doublespring.com",
@@ -180,7 +179,7 @@ Sample Request
 ```
 
 ```http
-PUT api/hrm/checkins/questions HTTP/1.1
+PUT api/hrm/checkins/questions/{checkin_id} HTTP/1.1
 Accept: application/json
 Authorization: Token "YOUR ACCESS TOKEN"
 
@@ -284,7 +283,7 @@ If the call succeeds, it will return the Checkin object. If the call fails, it w
 ### Delete Check-in
 
 ```http
-DELETE api/hrm/checkins/questions/{id}(checkinID) HTTP/1.1
+DELETE api/hrm/checkins/questions/{checkin_id} HTTP/1.1
 Accept: application/json
 Authorization: Token "YOUR ACCESS TOKEN"
 

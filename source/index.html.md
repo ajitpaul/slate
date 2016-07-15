@@ -14,6 +14,7 @@ includes:
   - introduction
   - crm/crm
   - crm/crm-deals
+  - crm/crm-mails
   - hrm/hrm
   - hrm/hrm-timeoff-policy
   - hrm/hrm-timeoff

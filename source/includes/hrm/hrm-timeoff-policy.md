@@ -62,7 +62,7 @@ Attribute | Description
 used_timeoff (*integer*) | Number of used timeoff days
 available_timeoff (*integer*) | Number of available timeoff days
 policy_status (*boolean*)| Policy active or not
-[policy_details](#policy_details-object) (*object*) | Details about the policy
+[policy_details](#policy-details-object) (*object*) | Details about the policy
 policy_emp_timeoff (*integer*) | total number of timeoff days
 policy (*boolean*) | is policy is activated for the specific employee
 pending_timeoff (*integer*)| Number of timeoff days left
@@ -70,11 +70,11 @@ approved_timeoff (*integer*)| Number of timeoff days approved
 id | ID of the Timeoff policy
 
 
-#### policy_details object
+#### Policy Details Object
 
 Attribute | Description 
 --------- | ----------- 
-[working_hours](#working_hours-object) (*object*)| details about the working hours
+[working_hours](#working-hours-object) (*object*)| details about the working hours
 total_timeoff (*integer*)| total number of timeoff days
 name (*string*) | name of the policy
 policy_renew_type (*string*)| Policy renewal type- first of every year or half year
@@ -83,7 +83,7 @@ carry_over (*boolean*)| is timeoff balance can be carried over to next year
 id (*integer*) | ID of the timeoff policy
 timeoff_interval (*integer*) | 
 
-#### working_hours object
+#### Working Hours Object
 
 Attribute | Description 
 --------- | ----------- 

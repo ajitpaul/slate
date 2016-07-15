@@ -127,7 +127,7 @@ Sample Request
 ```
 
 ```http
-PUT api/hrm/people/{id}/tasks/{id}(taskID) HTTP/1.1
+PUT api/hrm/people/{profile_id}/tasks/{task_id} HTTP/1.1
 Accept: application/json
 Authorization: Token "YOUR ACCESS TOKEN"
 
@@ -207,12 +207,12 @@ Sample Request
 ```
 
 ```http
-DELETE api/hrm/people/{id}/tasks/{id}(taskID) HTTP/1.1
+DELETE api/hrm/people/{profile_id}/tasks/{task_id} HTTP/1.1
 Accept: application/json
 Authorization: Token "YOUR ACCESS TOKEN"
 
 HTTP/1.1 200 OK
 Content-Type: application/json
 ```
-<aside>DELETE api/hrm/people/{id}/tasks/{id}(taskID)</aside>
+<aside>DELETE api/hrm/people/{profile_id}/tasks/{task_id}</aside>
 

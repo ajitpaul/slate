@@ -28,7 +28,7 @@ emp_status| 'AV'  | Active/Employed
 
 
 ```http
-GET /api/hrm/people/{id} HTTP/1.1
+GET /api/hrm/people/{profile_id} HTTP/1.1
 Accept: application/json
 Authorization: Token "YOUR ACCESS TOKEN"
 
@@ -72,7 +72,7 @@ Content-Type: application/json
 <aside class="warning">This api endpoint can only be viewed by a user with Administrator privileges</aside>
 ***HTTP Request***
 
-<aside>GET   /api/hrm/people/{id}</aside>
+<aside>GET   /api/hrm/people/{profile_id}</aside>
 
 
 Attribute | Description 
@@ -96,7 +96,7 @@ employee_id (*integer*)| Employee ID Number
 emp_status (*String*)| employee status (Active,Resigned,..) 
 emp_type (*String*)| Employee Type (Fulltime,Parttime,..)
 
-#### organisation object 
+#### Organisation object 
 Attribute | Description 
 --------- | ----------- 
 id (*integer*)| ID for the organisation
@@ -113,7 +113,7 @@ orgkey (*string*)| organisation key
 
 ### Retrieve an Employee
 
-<aside> GET api/hrm/people/{id} </aside>
+<aside> GET api/hrm/people/{profile_id} </aside>
 
 Retrieve an employee using the unique id of the employee.
 
@@ -200,7 +200,7 @@ The employee object will be returned if the call succeeded. If any of the above 
 
 ### Update Employee
 
-<aside>PATCH   /api/hrm/{id}/profile </aside>
+<aside>PATCH   /api/hrm/{profile_id}/profile </aside>
 
 ```
 Sample Request

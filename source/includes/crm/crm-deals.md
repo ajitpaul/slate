@@ -124,7 +124,7 @@ won_on (*string*)| date of winning the deal
 lost_on (*string*)| date of losing the deal
 closed_on (*string*)| date of closing the deal
 
-#### stage Object
+#### Stage Object
 
 Attribute | Description
 --------- | -----------
@@ -134,7 +134,7 @@ rotting_days (*integer*)| number of set days for rotting
 is_deal_rotting (*boolean*)| is the deal rotten or not
 id (*integer*)| ID of the deal in the stage
 
-#### currency Object 
+#### Currency Object 
 
 Attribute | Description
 --------- | -----------
@@ -144,7 +144,7 @@ code (*string*)|  code for the currency
 id (*integer*)| currency ID 
 
 
-#### people Object
+#### People Object
 Attribute | Description
 --------- | -----------
 id (*integer*)| ID of the contact
@@ -160,7 +160,7 @@ company_name (*string*)| company name of the contact
 tags (*string*)| tags for the contact
 
 
-#### custom_fields Object 
+#### Custom Fields Object 
 
 Attribute | Description
 --------- | -----------
@@ -329,7 +329,9 @@ Sample Response
 ```
 
 <aside>POST api/crm/deals</aside>
+#### Returns 
 
+If the call succeeds, it will return the [deal object](#deal-object).
 
 ### Update Deal
 
@@ -456,8 +458,7 @@ Sample Response
    "id":3379,
    "created_by":{
       "url":"/users/1",
-      "image":"https://twprofile.s3.amazonaws.com/users/user-8011f79c-007c-4943-a968-1d13dd13b1d9-image
-.jpg",
+      "image":"https://twprofile.s3.amazonaws.comimage.jpg",
       "id":1,
       "full_name":"Sathish Venkat",
       "email":"sathish@doublespring.com",
@@ -465,8 +466,7 @@ Sample Response
    },
    "owner":{
       "url":"/users/1",
-      "image":"https://twprofile.s3.amazonaws.com/users/user-8011f79c-007c-4943-a968-1d13dd13b1d9-image
-.jpg",
+      "image":"https://twprofile.s3.amazonaws.com/image.jpg",
       "id":1,
       "full_name":"Sathish Venkat",
       "email":"sathish@doublespring.com",
@@ -531,3 +531,215 @@ Sample Response
    "closed_on":null
 }
 ```
+
+#### Returns
+
+If the call succeeds, it will return the [deal object](#deal-object).
+
+### Delete Deal
+
+```
+Sample Request
+```
+
+```http
+PATCH api/crm/deals/{deal_id} HTTP/1.1
+Accept: application/json
+Authorization: Token "YOUR ACCESS TOKEN"
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
+```json
+  {
+	"is_trashed":true
+  }
+```
+
+```
+Sample Response
+```
+```json 
+{
+   "id":3380,
+   "created_by":{
+      "url":"/users/1",
+      "image":"https://twprofile.s3.amazonaws.com/image.jpg",
+      "id":1,
+      "full_name":"Sathish Venkat",
+      "email":"sathish@doublespring.com",
+      "label_txt":"SV"
+   },
+   "owner":{
+      "url":"/users/1",
+      "image":"https://twprofile.s3.amazonaws.com/image.jpg",
+      "id":1,
+      "full_name":"Sathish Venkat",
+      "email":"sathish@doublespring.com",
+      "label_txt":"SV"
+   },
+   "title":"DA10",
+   "index":0,
+   "stage":{
+      "index":0,
+      "total_stage":5,
+      "title":"Prospect Lead",
+      "rotting_days":null,
+      "is_deal_rotting":false,
+      "id":529
+   },
+   "deal_value":"0.00",
+   "currency":{
+      "is_custom":false,
+      "symbol":"$",
+      "code":"USD",
+      "id":191
+   },
+   "expected_close":null,
+   "last_activity_on":"2016-07-15",
+   "next_activity_on":null,
+   "is_trashed":true,
+   "status":"open",
+   "people":[
+   ],
+   "company":null,
+   "created_on":"2016-07-14T11:33:39.610202Z",
+   "tags":null,
+   "custom_fields":{
+      "77":{
+         "field_type":"checkbox",
+         "name":"wedwd",
+         "value":{
+            "wedwd":false
+         },
+         "key":"wedwd",
+         "options":[
+            "wedwd"
+         ],
+         "is_add_field":true
+      }
+   },
+   "won_on":null,
+   "lost_on":null,
+   "closed_on":null
+}
+```
+
+<aside>PATCH api/crm/deals/{deal_id}</aside>
+
+#### Returns
+
+If the patch call succeeds, it will return the [deal object](#deal-object)
+
+### Make a Deal Won/Lost
+
+```
+Sample Request 
+```
+
+```http
+PATCH api/crm/deals/{deal_id} HTTP/1.1
+Accept: application/json
+Authorization: Token "YOUR ACCESS TOKEN"
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
+```json
+  {
+	"status":"won"
+  }
+```
+
+```
+Sample Response
+```
+
+```json 
+{
+   "id":3379,
+   "created_by":{
+      "url":"/users/1",
+      "image":"https://twprofile.s3.amazonaws.com/image.jpg",
+      "id":1,
+      "full_name":"Sathish Venkat",
+      "email":"sathish@doublespring.com",
+      "label_txt":"SV"
+   },
+   "owner":{
+      "url":"/users/1",
+      "image":"https://twprofile.s3.amazonaws.com/image.jpg",
+      "id":1,
+      "full_name":"Sathish Venkat",
+      "email":"sathish@doublespring.com",
+      "label_txt":"SV"
+   },
+   "title":"test deal",
+   "index":1,
+   "stage":{
+      "index":0,
+      "total_stage":5,
+      "title":"Prospect Lead",
+      "rotting_days":null,
+      "is_deal_rotting":false,
+      "id":529
+   },
+   "deal_value":"225000.00",
+   "currency":{
+      "is_custom":false,
+      "symbol":"
+₹",
+      "code":"INR",
+      "id":194
+   },
+   "expected_close":"2016-07-20",
+   "last_activity_on":"2016-07-15",
+   "next_activity_on":null,
+   "is_trashed":false,
+   "status":"won",
+   "people":[
+
+   ],
+   "company":null,
+   "created_on":"2016-07-14T10:14:53
+.831473Z",
+   "tags":null,
+   "custom_fields":{
+      "77":{
+         "field_type":"checkbox",
+         "name":"wedwd",
+         "value":{
+            "wedwd":false
+         },
+         "key":"wedwd",
+         "options":[
+            "wedwd"
+         ],
+         "is_add_field":true
+      },
+      "74":{
+         "field_type":"select",
+         "name":"ed",
+         "value":"ewded",
+         "key":"ed",
+         "options":[
+            "ewded"
+         ],
+         "is_add_field":true
+      }
+   },
+   "won_on":"2016-07-15T06:35:22.694755Z",
+   "lost_on":null,
+   "closed_on":"2016-07-15"
+}
+```
+Attribute | Value | Description 
+---------| ------ | ----------
+status | 'won' | deal is won
+status | 'lost' | deal is lost
+
+#### Returns 
+
+If the call succeeds, it will return the [deal object](#deal-object) with updated data 
