@@ -305,3 +305,4 @@ If call succeeds, it will return the [contacts object](#contacts-object).
 ### Delete Contact
 
 <aside>DELETE api/contacts/people/{contact_id}</aside>
+
