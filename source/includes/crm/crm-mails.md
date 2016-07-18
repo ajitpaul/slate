@@ -5,7 +5,29 @@
 ```json
 {
   "id":8,
-  "deal":null,
+  "deal":{
+      "title":"Test IPL",
+      "ctype":"deal",
+      "deal_value":0.0,
+      "currency_symbol":"$",
+      "owner":{
+         "url":"/users/221",
+         "image":"",
+         "id":221,
+         "full_name":"Prasad Vara",
+         "email":"prasad@doublespring.com",
+         "label_txt":"PV"
+      },
+      "id":3244,
+      "stage":{
+         "index":0,
+         "total_stage":5,
+         "title":"Prospect Lead",
+         "rotting_days":null,
+         "is_deal_rotting":false,
+         "id":529
+      }
+   },
   "people":[
      {
         "id":1,
@@ -60,45 +82,123 @@
 
 Attribute | Description
 ---------| -----------
-id | ID of the mail
-deal | deal title, if any
+id (*integer*)| ID of the mail
+[deal](#deals-object) | object with data about deal or company.
 [people](#people-object) | array of contacts connected to the mail(To,CC)
-from_str | Name and mail of the sender
-subject | subject for the mail
-body_html | body content in html format
+from_str (*string*)| Name and mail of the sender
+subject (*string*)| subject for the mail
+body_html (*string*)| body content in html format
 [created_by](#user-object) | user details of creator
-received | date of receiving the mail
-is_archived | is the mail archived
-is_private | is the mail private
-is_read | is the mail read 
-act_on | date for the mail activity
+received (*string*)| date of receiving the mail
+is_archived (*boolean*)| is the mail archived
+is_private (*boolean*)| is the mail private
+is_read (*boolean*)| is the mail read 
+act_on (*string*)| date for the mail activity
+
+#### Deal Object
+
+Attribute | Description
+---------| -----------
+title (*string*)| title of the deal connected
+ctype (*string*)| it will change according to the content it is sending to the frontend. 
+deal_value (*integer*)| value of the deal
+currency_symbol (*string*)| currency symbol
+[owner](#user-object) | owner data 
+id (*integer*)| ID for the deal
+[stage](#stage-object) | stage info 
+
 
 #### People Object 
 
 Attribute | Description
 ---------| -----------
-id | ID of the contact
-email | email address
-first_name | first name of the contact
-last_name | last name
-phone | phone number of the contact
-job_title | desgination of the contact
-full_name | full name of the contact
-profile_image | image url of the contact
-company | company ID
-company | company name
-tags | tags related to the contact
+id (*integer*)| ID of the contact
+email (*string*)| email address
+first_name (*string*)| first name of the contact
+last_name (*string*)| last name
+phone (*string*)| phone number of the contact
+job_title (*string*)| desgination of the contact
+full_name (*string*)| full name of the contact
+profile_image (*string*)| image url of the contact
+company (*string*)| company ID
+company (*string*)| company name
+tags (*string*)| tags related to the contact
 
 
 ### Connect Deal To Mail
 
+```http
+PATCH /api/crm/emails/{mail_id} HTTP/1.1
+Accept: application/json
+Authorization: Token "YOUR ACCESS TOKEN"
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+
 ```
 Sample Request
 ```
+
 ```json
  {
   "deal":3375
  }
+```
+
+```
+Sample Response
+```
+
+```json
+{
+   "id":2,
+   "deal":{
+      "title":"Test IPL",
+      "ctype":"deal",
+      "deal_value":0.0,
+      "currency_symbol":"$",
+      "owner":{
+         "url":"/users/221",
+         "image":"",
+         "id":221,
+         "full_name":"Prasad Vara",
+         "email":"prasad@doublespring.com",
+         "label_txt":"PV"
+      },
+      "id":3244,
+      "stage":{
+         "index":0,
+         "total_stage":5,
+         "title":"Prospect Lead",
+         "rotting_days":null,
+         "is_deal_rotting":false,
+         "id":529
+      }
+   },
+   "people":[
+
+   ],
+   "from_str":"Sathish Kumar <sathish@doublespring.com>",
+   "subject":"test",
+   "body_html":"<div dir=\"ltr\">test<br clear=\"all\"><div><br></div>-- <br><div class=\"gmail_signature
+     \><div><font color=\"#333333\">Regards,</font><div><font color=\"#333333\">Sathishkumar V</font></div
+         Media India  (P) Ltd</a></font><div><font color=\"#333333\"><br></font><div><font color=\"#333333\"
+      face=\"arial, sans-serif\" size=\"3\"><br></font></div></div></div>\r\n</div>\r\n",
+   "created_by":{
+      "url":"/users/1",
+      "image":"https://twprofile.s3.amazonaws.com/users/image.jpg",
+      "id":1,
+      "full_name":"Sathish Venkat",
+      "email":"sathish@doublespring.com",
+      "label_txt":"SV"
+   },
+   "received":"2015-10-30T13:22:55.528585Z",
+   "is_archived":false,
+   "is_private":true,
+   "is_read":true,
+   "act_on":"2015-10-30T13:22:55.528585Z"
+}
 ```
 
 #### Returns

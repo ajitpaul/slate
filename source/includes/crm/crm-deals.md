@@ -105,7 +105,7 @@ Attribute | Description
 --------- | -----------
 id (*integer*)| ID of the deal
 [created_by](#user-object) | info about the creator of the deal
-[owner](#user-object) | info about the owner of the deal, can be changed(default owner is creator)
+[owner](#user-object) | info about the owner of the deal, can be changed(by default, owner is creator)
 title (*string*)| title of the deal
 index (*integer*)| order of the deal to show
 [stage](#stage-object) | stage details
@@ -129,6 +129,7 @@ closed_on (*string*)| date of closing the deal
 Attribute | Description
 --------- | -----------
 index (*integer*)| order of the stage
+title (*string*)| stage name
 total_stage (*integer*)| total number of stages
 rotting_days (*integer*)| number of set days for rotting
 is_deal_rotting (*boolean*)| is the deal rotten or not
