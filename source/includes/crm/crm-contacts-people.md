@@ -1,6 +1,6 @@
 ## Contacts 
 
-### Contacts Object 
+### People Object
 
 ```json
 {
@@ -45,23 +45,22 @@
 
 Attribute | Description
 ----------| -----------
-id | Contact ID
-email | email address
-first_name | first name of the contact
-last_name | last name of the contact
-phone | phone number of the contact
-full_name | full name of the contact
-job_title | Designation 
+id (*integer*)| Contact ID
+email (*string*)| email address
+first_name (*string*)| first name of the contact
+last_name (*string*)| last name of the contact
+phone (*string*)| phone number of the contact
+full_name (*string*)| full name of the contact
+job_title (*string*)| Designation 
 [owner](#user-object) | owner info
 [company](#company-object) | company details
 [created_by](#user-object) | creator of the contact
-created_on | datetime of the creation 
-tags | tag names given for the contact
+created_on (*string*)| datetime of the creation 
+tags (*string*)| tag names given for the contact
 [custom_fields](#custom-fields-object) | all custom fields for the CRM contacts
 
 
-### Create Contact
-
+### Create People
 
 ```http
 POST api/contacts/people HTTP/1.1
@@ -84,7 +83,6 @@ Sample Request
          "name":"Deal",
          "key":"deal",
          "options":[
-
          ],
          "value":"Test"
       },
@@ -174,7 +172,7 @@ Sample Response
 
 If call succeeds, it will send the [contacts object](#contacts-object) back. 
 
-### Update Contacts
+### Update People
 
 ```http
 PUT api/contacts/people/{contact_id} HTTP/1.1
@@ -302,7 +300,19 @@ Sample Response
 If call succeeds, it will return the [contacts object](#contacts-object).
 
 
-### Delete Contact
+### Delete People
+
+```http
+DELETE api/contacts/people/{contact_id} HTTP/1.1
+Accept: application/json
+Authorization: Token "YOUR ACCESS TOKEN"
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
 
 <aside>DELETE api/contacts/people/{contact_id}</aside>
 
+#### Returns 
+
+If the call succeeds, the contact will be removed from the list.

@@ -124,10 +124,6 @@ Retrieve an employee using the unique id of the employee.
 ### Create Employee
 Creates an employee object
 
-```
-Sample Request
-```
-
 ```http
 GET /api/users HTTP/1.1
 Accept: application/json
@@ -135,6 +131,10 @@ Authorization: Token "YOUR ACCESS TOKEN"
 
 HTTP/1.1 200 OK
 Content-Type: application/json
+```
+
+```
+Sample Request
 ```
 
 ```json
@@ -200,7 +200,14 @@ The employee object will be returned if the call succeeded. If any of the above 
 
 ### Update Employee
 
-<aside>PATCH   /api/hrm/{profile_id}/profile </aside>
+```http
+PATCH /api/hrm/{profile_id}/profile HTTP/1.1
+Accept: application/json
+Authorization: Token "YOUR ACCESS TOKEN"
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
 
 ```
 Sample Request
@@ -297,6 +304,7 @@ Sample Response
    "emp_id":"do10048"
 }
 ```
+<aside>PATCH   /api/hrm/{profile_id}/profile </aside>
 
 Attribute | Description 
 --------- | ----------- 
@@ -323,11 +331,11 @@ last_name (*string*) | Employee Last name
 is_admin (*boolean*)| Employee is Administrator or not
 is_hrm_admin (*boolean*)| Employee is HRM Administrator or not
 is_active (*boolean*)| Employee is Active or not 
-is_crm_admin (*boolean*) | Employee is CRM admin or not
-is_owner (*boolean*) | user is owner of the company 
-label_txt (*string*) | Label text for profile avatar 
+is_crm_admin (*boolean*)| Employee is CRM admin or not
+is_owner (*boolean*)| user is owner of the company 
+label_txt (*string*)| Label text for profile avatar 
 job_title (*String*)| Job Title/Designation 
-[owner](#user-object) (*object*) | owner info
+[owner](#user-object) (*object*)| owner info
 
 #### Returns
 

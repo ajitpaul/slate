@@ -86,10 +86,6 @@ job_title (*string*)| Designation
 
 ### Create Check-in
 
-```
-Sample Request
-```
-
 ```http
 POST api/hrm/checkins/questions HTTP/1.1
 Accept: application/json
@@ -97,6 +93,10 @@ Authorization: Token "YOUR ACCESS TOKEN"
 
 HTTP/1.1 200 OK
 Content-Type: application/json
+```
+
+```
+Sample Request
 ```
 
 ```json
@@ -174,9 +174,7 @@ If this call succeeds, the checkin object will be returned, else , if the reques
 
 ### Update Check-in
 
-```
-Sample Request
-```
+
 
 ```http
 PUT api/hrm/checkins/questions/{checkin_id} HTTP/1.1
@@ -185,6 +183,10 @@ Authorization: Token "YOUR ACCESS TOKEN"
 
 HTTP/1.1 200 OK
 Content-Type: application/json
+```
+
+```
+Sample Request
 ```
 
 ```json

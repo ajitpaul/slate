@@ -16,7 +16,8 @@ includes:
   - crm/crm-deals
   - crm/crm-mails
   - crm/crm-activities
-  - crm/crm-contacts
+  - crm/crm-contacts-people
+  - crm/crm-contacts-organization
   - hrm/hrm
   - hrm/hrm-timeoff-policy
   - hrm/hrm-timeoff

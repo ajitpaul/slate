@@ -175,10 +175,6 @@ is_add_field (*boolean*)| if the field should appear in the add deal form
 
 ### Create Deal Object
 
-```
-Sample Request
-```
-
 ```http
 POST api/crm/deals HTTP/1.1
 Accept: application/json
@@ -187,6 +183,11 @@ Authorization: Token "YOUR ACCESS TOKEN"
 HTTP/1.1 200 OK
 Content-Type: application/json
 ```
+
+```
+Sample Request
+```
+
 
 ```json
 {
@@ -336,10 +337,6 @@ If the call succeeds, it will return the [deal object](#deal-object).
 
 ### Update Deal
 
-```
-Sample Request
-```
-
 ```http
 POST api/crm/deals HTTP/1.1
 Accept: application/json
@@ -347,6 +344,10 @@ Authorization: Token "YOUR ACCESS TOKEN"
 
 HTTP/1.1 200 OK
 Content-Type: application/json
+```
+
+```
+Sample Request
 ```
 
 ```json
@@ -539,9 +540,6 @@ If the call succeeds, it will return the [deal object](#deal-object).
 
 ### Delete Deal
 
-```
-Sample Request
-```
 
 ```http
 PATCH api/crm/deals/{deal_id} HTTP/1.1
@@ -550,6 +548,10 @@ Authorization: Token "YOUR ACCESS TOKEN"
 
 HTTP/1.1 200 OK
 Content-Type: application/json
+```
+
+```
+Sample Request
 ```
 
 ```json
@@ -635,10 +637,6 @@ If the patch call succeeds, it will return the [deal object](#deal-object)
 
 ### Make a Deal Won/Lost
 
-```
-Sample Request 
-```
-
 ```http
 PATCH api/crm/deals/{deal_id} HTTP/1.1
 Accept: application/json
@@ -646,6 +644,10 @@ Authorization: Token "YOUR ACCESS TOKEN"
 
 HTTP/1.1 200 OK
 Content-Type: application/json
+```
+
+```
+Sample Request 
 ```
 
 ```json
