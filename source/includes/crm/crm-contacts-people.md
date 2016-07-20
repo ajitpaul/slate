@@ -151,7 +151,6 @@ Sample Response
          "value":"Test Deal",
          "key":"deal",
          "options":[
-
          ],
          "is_add_field":true
       },
@@ -215,7 +214,6 @@ Sample Request
          "value":"Test",
          "key":"deal",
          "options":[
-
          ],
          "is_add_field":true
       },
@@ -234,6 +232,7 @@ Sample Request
 ```
 Sample Response
 ```
+
 
 ```json
 {
@@ -278,7 +277,6 @@ Sample Response
          "value":"Test",
          "key":"deal",
          "options":[
-
          ],
          "is_add_field":true
       },
