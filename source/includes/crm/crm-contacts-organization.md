@@ -33,17 +33,17 @@
 
 Attribute | Description
 ----------| -----------
-id | Organization ID
-domain | domain used by the organization
-name | name of organization
-address | address of organization
-phone | phone number
+id (*integer*)| Organization ID
+domain (*string*)| domain used by the organization
+name (*string*)| name of organization
+address (*string*)| address of organization
+phone (*string*)| phone number
 [created_by](#user-object) | organization added-by user details
 [owner](#user-object) | owner details
-created_on | creation date 
-people | total people added to the organization
-deals | total deals added
-tags | tags related to organization
+created_on (*string*)| creation date 
+people (*integer*)(*integer*)| total people added to the organization
+deals (*integer*)| total deals added
+tags (*string*)| tags related to organization
 [custom_fields](#custom_fields-object) | custom fields added to the organization add-form
 
 

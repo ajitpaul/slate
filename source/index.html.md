@@ -12,6 +12,8 @@ toc_footers:
 
 includes:
   - introduction
+  - pm/pm
+  - pm/pm-project
   - crm/crm
   - crm/crm-deals
   - crm/crm-mails
